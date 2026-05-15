@@ -6,27 +6,30 @@
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="BagTag"/>
-<meta name="theme-color" content="#3D5AFE"/>
+<meta name="theme-color" content="#00BCD4"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 <link rel="manifest" href="manifest.json"/>
-<title>BagTag — Smart Bag Organizer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>BagTag — Tag Smart. Search Less.</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:#F4F1EC;--surface:#FFF;--surface2:#EDEAE3;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
-  --text:#1C1916;--text2:#6B6660;--text3:#A09C96;
+  --bg:#F5F6FA;--surface:#FFF;--surface2:#EEF0F8;--border:rgba(26,36,86,0.08);--border2:rgba(26,36,86,0.14);
+  --text:#1A2456;--text2:#4A5480;--text3:#8A95C0;
   --accent:#3D5AFE;--accent-lt:#EEF1FF;
+  --grad:linear-gradient(135deg,#00BCD4 0%,#3D5AFE 55%,#9C27B0 100%);
+  --grad-btn:linear-gradient(135deg,#00BCD4 0%,#3D5AFE 55%,#9C27B0 100%);
+  --navy:#1A2456;
   --green:#1A7A4A;--green-lt:#E6F4ED;
   --red:#C0392B;--red-lt:#FDECEA;
-  --r:14px;--rsm:10px;--font:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rsm:10px;--font:'Nunito',sans-serif;--mono:'DM Mono',monospace;
   --c1-bg:#E8F0FF;--c1:#3D5AFE;--c2-bg:#FFF0E8;--c2:#E8620A;
   --c3-bg:#E8FFF0;--c3:#1A7A4A;--c4-bg:#F8E8FF;--c4:#8B2FC9;
   --c5-bg:#FFF8E8;--c5:#B45309;--c6-bg:#E8FFFF;--c6:#0E7490;
 }
 @media(prefers-color-scheme:dark){:root{
-  --bg:#141210;--surface:#1C1A17;--surface2:#242220;
+  --bg:#0E0F1A;--surface:#181929;--surface2:#1E2035;
   --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#F0EDE6;--text2:#9E9A94;--text3:#6B6860;
+  --text:#E8EAFF;--text2:#9098CC;--text3:#5A6490;
   --accent:#6B7FFF;--accent-lt:#1A2040;
   --green:#3DB870;--green-lt:#0F2A1C;--red:#E05C4B;--red-lt:#2A1210;
   --c1-bg:#1A2040;--c2-bg:#2A1A0A;--c3-bg:#0A2A16;--c4-bg:#200A2A;--c5-bg:#2A200A;--c6-bg:#0A2224;
@@ -48,7 +51,7 @@ html,body{height:100%;background:var(--bg);font-family:var(--font);color:var(--t
 .wordmark span{color:var(--accent);}
 .tagline{font-size:12px;color:var(--text3);font-family:var(--mono);margin-top:3px;}
 .home-acts{display:flex;gap:8px;margin-top:14px;}
-.scan-btn{display:flex;align-items:center;gap:7px;background:var(--accent);color:white;border:none;border-radius:99px;padding:10px 18px;font-family:var(--font);font-size:14px;font-weight:500;}
+.scan-btn{display:flex;align-items:center;gap:7px;background:var(--grad-btn);color:white;border:none;border-radius:99px;padding:10px 18px;font-family:var(--font);font-size:14px;font-weight:700;}
 .scan-btn svg{width:15px;height:15px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;}
 .batch-btn{display:flex;align-items:center;gap:6px;background:var(--surface);color:var(--text2);border:0.5px solid var(--border2);border-radius:99px;padding:10px 16px;font-family:var(--font);font-size:13px;font-weight:500;}
 .sec-row{display:flex;align-items:center;justify-content:space-between;margin:20px 0 10px;}
@@ -69,7 +72,7 @@ html,body{height:100%;background:var(--bg);font-family:var(--font);color:var(--t
 .bag-meta{flex:1;min-width:0;}
 .bag-name{font-size:14px;font-weight:500;}
 .bag-sub{font-size:11px;color:var(--text3);font-family:var(--mono);margin-top:2px;}
-.fab{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:440px;background:var(--accent);color:white;border:none;border-radius:99px;padding:15px 24px;font-family:var(--font);font-size:15px;font-weight:500;display:none;align-items:center;justify-content:center;gap:8px;z-index:500;}
+.fab{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:440px;background:var(--grad-btn);color:white;border:none;border-radius:99px;padding:15px 24px;font-family:var(--font);font-size:15px;font-weight:700;display:none;align-items:center;justify-content:center;gap:8px;z-index:500;box-shadow:0 4px 20px rgba(61,90,254,0.35);}
 .fab svg{width:17px;height:17px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;}
 .empty{text-align:center;padding:44px 20px;}
 .empty-icon{font-size:48px;margin-bottom:12px;}
@@ -83,7 +86,7 @@ html,body{height:100%;background:var(--bg);font-family:var(--font);color:var(--t
 .batch-sub{font-size:10px;color:var(--text3);font-family:var(--mono);margin-top:1px;}
 .batch-row{display:flex;gap:8px;margin-bottom:8px;}
 .batch-row button{flex:1;padding:8px;border:0.5px solid var(--border2);border-radius:var(--rsm);background:none;color:var(--text);font-family:var(--font);font-size:12px;}
-.batch-dl{width:100%;padding:11px;border:none;border-radius:var(--rsm);background:var(--accent);color:white;font-family:var(--font);font-size:13px;font-weight:500;}
+.batch-dl{width:100%;padding:11px;border:none;border-radius:var(--rsm);background:var(--grad-btn);color:white;font-family:var(--font);font-size:13px;font-weight:700;}
 .batch-prog{font-size:12px;color:var(--text2);text-align:center;margin-top:8px;line-height:1.6;display:none;}
 .form-group{margin-bottom:18px;}
 .form-lbl{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);font-family:var(--mono);margin-bottom:7px;display:block;}
@@ -93,7 +96,7 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 .emoji-inp{width:72px!important;font-size:22px;text-align:center;}
 .flex-row{display:flex;gap:10px;}
 .btn{width:100%;padding:14px;border-radius:var(--rsm);font-family:var(--font);font-size:15px;font-weight:500;border:none;-webkit-appearance:none;}
-.btn-p{background:var(--accent);color:white;}
+.btn-p{background:var(--grad-btn);color:white;font-weight:700;box-shadow:0 3px 14px rgba(61,90,254,0.3);}
 .btn-s{background:var(--surface);color:var(--text);border:0.5px solid var(--border2);}
 .btn-row{display:flex;gap:10px;margin-top:4px;}
 .btn-row .btn{flex:1;}
@@ -112,7 +115,7 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 .icon-cat-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 .tab-bar{display:flex;gap:4px;padding:0 20px 10px;flex-shrink:0;}
 .tab{flex:1;padding:9px;text-align:center;font-size:13px;font-weight:500;border:0.5px solid var(--border);border-radius:99px;background:none;color:var(--text2);font-family:var(--font);}
-.tab.active{background:var(--accent);color:white;border-color:var(--accent);}
+.tab.active{background:var(--grad-btn);color:white;border-color:transparent;}
 .breadcrumb{display:flex;align-items:center;gap:6px;padding:0 20px 8px;font-size:12px;color:var(--text3);font-family:var(--mono);flex-shrink:0;flex-wrap:wrap;}
 .breadcrumb span{cursor:pointer;}
 .item-card{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:9px;}
@@ -213,7 +216,7 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 .pwa-banner-title{font-size:14px;font-weight:600;}
 .pwa-banner-sub{font-size:12px;color:var(--text2);margin-top:2px;}
 .pwa-banner-acts{display:flex;gap:8px;flex-shrink:0;}
-.pwa-install-btn{background:var(--accent);color:white;border:none;border-radius:99px;padding:8px 16px;font-family:var(--font);font-size:13px;font-weight:500;}
+.pwa-install-btn{background:var(--grad-btn);color:white;border:none;border-radius:99px;padding:8px 16px;font-family:var(--font);font-size:13px;font-weight:700;}
 .pwa-dismiss-btn{background:none;border:none;color:var(--text3);font-size:20px;padding:4px;}
 @keyframes slideUp{from{transform:translateX(-50%) translateY(100%)}to{transform:translateX(-50%) translateY(0)}}
 
@@ -251,7 +254,7 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 .bottom-nav.visible{display:flex;}
 .bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font-family:var(--font);font-size:10px;font-weight:500;color:var(--text3);padding:4px 0;cursor:pointer;}
 .bnav-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-.bnav-item.active{color:var(--accent);}
+.bnav-item.active{background:var(--grad-btn);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
 /* ── SUMMARY SCREEN ── */
 .summary-header{padding:16px 20px 10px;flex-shrink:0;}
@@ -271,8 +274,57 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 .summary-item-row{display:flex;align-items:baseline;gap:6px;padding:3px 0;font-size:12px;color:var(--text2);}
 .summary-empty{text-align:center;padding:44px 20px;}
 .summary-dl-wrap{padding:12px 20px 8px;}
-.summary-dl-btn{width:100%;padding:13px;background:var(--accent);color:white;border:none;border-radius:var(--rsm);font-family:var(--font);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;}
+.summary-dl-btn{width:100%;padding:13px;background:var(--grad-btn);color:white;border:none;border-radius:var(--rsm);font-family:var(--font);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 3px 14px rgba(61,90,254,0.3);}
 .summary-dl-btn svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;}
+/* ── FREEMIUM / PRO ── */
+.pro-badge{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);color:white;font-size:9px;font-weight:800;font-family:'Nunito',sans-serif;padding:2px 7px;border-radius:99px;letter-spacing:0.05em;vertical-align:middle;margin-left:5px;}
+.pro-gate{background:var(--surface);border:1.5px dashed rgba(61,90,254,0.3);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:14px;}
+.pro-gate-icon{font-size:32px;margin-bottom:8px;}
+.pro-gate-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:4px;}
+.pro-gate-sub{font-size:12px;color:var(--text3);line-height:1.5;margin-bottom:14px;}
+.pro-gate-btn{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);color:white;border:none;border-radius:99px;padding:11px 22px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(61,90,254,0.35);}
+.pro-pill{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);color:white;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;}
+/* Pro upgrade sheet */
+.pro-sheet{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--surface);border-top:0.5px solid var(--border);border-radius:20px 20px 0 0;padding:24px 20px 36px;z-index:900;display:none;}
+.pro-sheet.open{display:block;}
+.pro-sheet-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 20px;}
+.pro-sheet-logo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;}
+.pro-sheet-title{font-size:22px;font-weight:900;text-align:center;color:var(--text);margin-bottom:4px;}
+.pro-sheet-sub{font-size:13px;color:var(--text3);text-align:center;margin-bottom:20px;}
+.pro-feature-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.pro-feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text);}
+.pro-feature-list li span.icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.pro-feature-list li strong{display:block;font-weight:800;font-size:13px;}
+.pro-feature-list li small{color:var(--text3);font-size:11px;}
+.pro-price-row{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:16px;}
+.pro-price{font-size:32px;font-weight:900;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.pro-price-per{font-size:13px;color:var(--text3);}
+.pro-cta{width:100%;padding:15px;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);color:white;border:none;border-radius:99px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;box-shadow:0 6px 24px rgba(61,90,254,0.38);margin-bottom:10px;cursor:pointer;}
+.pro-dismiss{width:100%;padding:11px;background:none;border:none;color:var(--text3);font-family:'Nunito',sans-serif;font-size:13px;cursor:pointer;}
+/* Sharing screen */
+.member-card{display:flex;align-items:center;gap:12px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;}
+.member-avatar{width:40px;height:40px;min-width:40px;border-radius:50%;background:linear-gradient(135deg,#00BCD4,#9C27B0);display:flex;align-items:center;justify-content:center;color:white;font-size:15px;font-weight:800;}
+.member-meta{flex:1;}
+.member-name{font-size:14px;font-weight:700;}
+.member-role{font-size:11px;color:var(--text3);font-family:var(--mono);margin-top:1px;}
+.role-chip{padding:3px 10px;border-radius:99px;font-size:10px;font-weight:700;font-family:'Nunito',sans-serif;}
+.role-owner{background:#E8F0FF;color:#3D5AFE;}
+.role-editor{background:#E8FFF0;color:#1A7A4A;}
+.role-viewer{background:#F8E8FF;color:#8B2FC9;}
+/* Barcode scanner */
+.barcode-result-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:16px;margin-top:14px;display:none;}
+.barcode-result-name{font-size:16px;font-weight:800;color:var(--text);margin-bottom:4px;}
+.barcode-result-meta{font-size:12px;color:var(--text3);font-family:var(--mono);}
+/* Reminders */
+.reminder-card{display:flex;align-items:center;gap:12px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;}
+.reminder-icon{width:40px;height:40px;min-width:40px;border-radius:12px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.reminder-meta{flex:1;}
+.reminder-name{font-size:14px;font-weight:700;}
+.reminder-date{font-size:11px;font-family:var(--mono);margin-top:2px;}
+.reminder-date.urgent{color:#C0392B;}
+.reminder-date.soon{color:#B45309;}
+.reminder-date.ok{color:#1A7A4A;}
+.reminder-type{font-size:10px;font-family:var(--mono);color:var(--text3);}
 
 </style>
 </head>
@@ -281,8 +333,54 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 
 <!-- AUTH SCREEN -->
 <div id="auth-screen" class="auth-screen">
-  <div class="auth-logo">Bag<span>Tag</span></div>
-  <div class="auth-tagline">smart bag organizer</div>
+  <!-- BagTag SVG Logo -->
+  <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;">
+    <svg width="110" height="110" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 8px 24px rgba(61,90,254,0.28));">
+      <defs>
+        <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00E5FF"/>
+          <stop offset="50%" style="stop-color:#4B6FFF"/>
+          <stop offset="100%" style="stop-color:#9B30FF"/>
+        </linearGradient>
+        <linearGradient id="glossGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:rgba(255,255,255,0.45)"/>
+          <stop offset="50%" style="stop-color:rgba(255,255,255,0.05)"/>
+          <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+        </linearGradient>
+        <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1A90FF"/>
+          <stop offset="100%" style="stop-color:#4B6FFF"/>
+        </linearGradient>
+      </defs>
+      <!-- Tag body: price tag shape with pointed left tip -->
+      <path d="M38,100 L70,55 Q72,42 86,42 L168,42 Q182,42 182,56 L182,144 Q182,158 168,158 L86,158 Q72,158 70,145 Z" fill="url(#tagGrad)" rx="14"/>
+      <!-- Gloss overlay -->
+      <path d="M38,100 L70,55 Q72,42 86,42 L168,42 Q182,42 182,56 L182,100 L70,100 Z" fill="url(#glossGrad)" opacity="0.6"/>
+      <!-- O-ring loop -->
+      <ellipse cx="52" cy="100" rx="22" ry="16" fill="none" stroke="#1A2456" stroke-width="8"/>
+      <ellipse cx="52" cy="100" rx="22" ry="16" fill="none" stroke="#2D3B8A" stroke-width="5" opacity="0.5"/>
+      <!-- Hole in tag tip -->
+      <circle cx="62" cy="100" r="7" fill="#1A2456"/>
+      <circle cx="62" cy="100" r="4" fill="url(#tagGrad)"/>
+      <!-- Bag icon - white border shape -->
+      <rect x="101" y="78" width="54" height="48" rx="10" fill="white" opacity="0.95"/>
+      <!-- Bag handle -->
+      <path d="M114,78 Q114,65 128,65 Q142,65 142,78" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+      <!-- Bag body fill -->
+      <rect x="105" y="82" width="46" height="40" rx="8" fill="url(#bagGrad)"/>
+      <!-- Bag clasp -->
+      <rect x="119" y="88" width="18" height="6" rx="3" fill="white" opacity="0.9"/>
+      <!-- Bag dot -->
+      <circle cx="128" cy="107" r="4" fill="white" opacity="0.7"/>
+    </svg>
+    <!-- Wordmark -->
+    <div style="display:flex;align-items:baseline;gap:0;margin-top:2px;">
+      <span style="font-family:'Nunito',sans-serif;font-size:32px;font-weight:900;color:#1A2456;letter-spacing:-1px;">Bag</span>
+      <span style="font-family:'Nunito',sans-serif;font-size:32px;font-weight:900;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1px;">Tag</span>
+    </div>
+    <!-- Slogan -->
+    <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:4px;">Tag Smart. Search Less.</div>
+  </div>
   <div class="auth-card">
     <div class="auth-title" id="auth-title">Sign in</div>
     <div class="auth-sub" id="auth-sub">Your bags, safely in the cloud.</div>
@@ -299,15 +397,27 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
       </div>
     </div>
     <button class="btn btn-p" id="btn-auth-submit">Sign in</button>
+    <div id="forgot-pw-row" style="text-align:center;margin-top:8px;">
+      <button id="btn-forgot-pw" style="background:none;border:none;color:var(--text3);font-size:12px;font-family:var(--font);cursor:pointer;text-decoration:underline;">Forgot password?</button>
+    </div>
     <div class="auth-switch" id="auth-switch-row">No account? <button id="btn-auth-toggle">Create one</button></div>
   </div>
 </div>
 
 <!-- ACCOUNT SHEET -->
 <div class="acct-sheet" id="acct-sheet">
-  <div style="font-size:15px;font-weight:600;margin-bottom:6px;">Account</div>
+  <div style="font-size:15px;font-weight:700;margin-bottom:4px;font-family:'Nunito',sans-serif;">Account</div>
   <div class="acct-email" id="acct-email-label"></div>
-  <div style="margin:12px 0 16px;">
+
+  <!-- Plan status badge -->
+  <div id="acct-plan-row" style="margin:10px 0 14px;">
+    <div id="acct-plan-badge" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;">
+    </div>
+    <div id="acct-plan-sub" style="font-size:11px;color:var(--text3);margin-top:5px;"></div>
+    <button id="btn-upgrade-from-acct" style="display:none;margin-top:10px;width:100%;padding:11px;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);color:white;border:none;border-radius:99px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;">✨ Upgrade to BagTag Pro — ₹199/mo</button>
+  </div>
+
+  <div style="margin:0 0 14px;">
     <button class="tnc-link" id="btn-view-tnc">📋 View Terms &amp; Conditions</button>
   </div>
   <div class="acct-row">
@@ -320,8 +430,36 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
 <!-- HOME -->
 <div id="screen-home" class="screen">
   <div class="home-hdr">
-    <div class="wordmark">Bag<span>Tag</span></div>
-    <div class="tagline">smart bag organizer</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg width="38" height="38" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;filter:drop-shadow(0 3px 8px rgba(61,90,254,0.25));">
+        <defs>
+          <linearGradient id="hTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00E5FF"/>
+            <stop offset="50%" style="stop-color:#4B6FFF"/>
+            <stop offset="100%" style="stop-color:#9B30FF"/>
+          </linearGradient>
+          <linearGradient id="hBagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1A90FF"/>
+            <stop offset="100%" style="stop-color:#4B6FFF"/>
+          </linearGradient>
+        </defs>
+        <path d="M38,100 L70,55 Q72,42 86,42 L168,42 Q182,42 182,56 L182,144 Q182,158 168,158 L86,158 Q72,158 70,145 Z" fill="url(#hTagGrad)"/>
+        <ellipse cx="52" cy="100" rx="22" ry="16" fill="none" stroke="#1A2456" stroke-width="8"/>
+        <circle cx="62" cy="100" r="6" fill="#1A2456"/>
+        <rect x="101" y="78" width="54" height="48" rx="10" fill="white" opacity="0.95"/>
+        <path d="M114,78 Q114,65 128,65 Q142,65 142,78" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+        <rect x="105" y="82" width="46" height="40" rx="8" fill="url(#hBagGrad)"/>
+        <rect x="119" y="88" width="18" height="6" rx="3" fill="white" opacity="0.9"/>
+        <circle cx="128" cy="107" r="4" fill="white" opacity="0.7"/>
+      </svg>
+      <div>
+        <div style="display:flex;align-items:baseline;gap:0;">
+          <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;color:var(--text);letter-spacing:-0.5px;">Bag</span>
+          <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.5px;">Tag</span>
+        </div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:1px;">Tag Smart. Search Less.</div>
+      </div>
+    </div>
     <div class="home-acts">
       <button class="scan-btn" id="btn-scan">
         <svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
@@ -645,6 +783,167 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
   </div>
 </div>
 
+<!-- SHARING SCREEN -->
+<div id="screen-sharing" class="screen">
+  <div class="topbar">
+    <button class="back-btn" id="back-sharing"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+    <h2>Family &amp; Team Sharing <span class="pro-badge">PRO</span></h2>
+  </div>
+  <div class="scroll-area">
+    <div id="sharing-pro-gate" class="pro-gate">
+      <div class="pro-gate-icon">👨‍👩‍👧‍👦</div>
+      <div class="pro-gate-title">Share with your family or team</div>
+      <div class="pro-gate-sub">Let multiple people access and manage the same inventory. Perfect for joint families, shops, and small businesses. Up to 10 members.</div>
+      <button class="pro-gate-btn" onclick="showProSheet('sharing')">✨ Upgrade to BagTag Pro</button>
+    </div>
+    <div id="sharing-content" style="display:none;">
+      <div style="margin-bottom:14px;">
+        <div class="sec-lbl" style="margin-bottom:10px;">👥 Members</div>
+        <div id="members-list">
+          <div class="member-card">
+            <div class="member-avatar">You</div>
+            <div class="member-meta">
+              <div class="member-name" id="share-owner-label">Account Owner</div>
+              <div class="member-role">Owner · Full access</div>
+            </div>
+            <span class="role-chip role-owner">Owner</span>
+          </div>
+        </div>
+        <button class="btn btn-s" id="btn-invite-member" style="margin-top:10px;">+ Invite member</button>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div class="sec-lbl" style="margin-bottom:8px;">🔗 Share via link</div>
+        <div style="background:var(--surface2);border-radius:var(--rsm);padding:12px;display:flex;align-items:center;gap:10px;">
+          <div style="flex:1;font-size:12px;font-family:var(--mono);color:var(--text3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">bagtag.in/join/abc123xyz</div>
+          <button class="btn btn-s" style="flex-shrink:0;padding:7px 14px;font-size:12px;" onclick="toast('Link copied!')">Copy</button>
+        </div>
+      </div>
+      <div style="background:var(--surface2);border-radius:var(--r);padding:14px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:8px;">Permission levels</div>
+        <div style="font-size:11px;color:var(--text3);line-height:1.8;">
+          <div><strong style="color:var(--text);">Owner</strong> — Full access, manage members</div>
+          <div><strong style="color:var(--text);">Editor</strong> — Add, edit, delete items &amp; bags</div>
+          <div><strong style="color:var(--text);">Viewer</strong> — Read-only, scan QR labels</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BARCODE SCANNER SCREEN -->
+<div id="screen-barcode" class="screen">
+  <div class="topbar">
+    <button class="back-btn" id="back-barcode"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+    <h2>Barcode Scan &amp; Auto-fill <span class="pro-badge">PRO</span></h2>
+  </div>
+  <div class="scroll-area">
+    <div id="barcode-pro-gate" class="pro-gate">
+      <div class="pro-gate-icon">📦</div>
+      <div class="pro-gate-title">Scan any product barcode</div>
+      <div class="pro-gate-sub">Point your camera at any UPC or EAN barcode and BagTag will auto-fill the product name, category, and details — no typing needed.</div>
+      <button class="pro-gate-btn" onclick="showProSheet('barcode')">✨ Upgrade to BagTag Pro</button>
+    </div>
+    <div id="barcode-content" style="display:none;">
+      <div class="vid-frame" style="margin-bottom:14px;">
+        <video id="barcode-video" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        <div class="scan-overlay">
+          <div style="width:220px;height:80px;border:2px solid rgba(255,255,255,0.6);border-radius:8px;position:relative;">
+            <div style="position:absolute;top:-2px;left:-2px;width:24px;height:24px;border-top:3px solid white;border-left:3px solid white;border-radius:3px 0 0 0;"></div>
+            <div style="position:absolute;bottom:-2px;right:-2px;width:24px;height:24px;border-bottom:3px solid white;border-right:3px solid white;border-radius:0 0 3px 0;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scan-lbl" style="text-align:center;margin-bottom:14px;">Point at any product barcode (UPC / EAN)</div>
+      <div class="barcode-result-card" id="barcode-result-card">
+        <div style="font-size:11px;font-family:var(--mono);color:var(--text3);margin-bottom:6px;">SCANNED PRODUCT</div>
+        <div class="barcode-result-name" id="barcode-result-name">-</div>
+        <div class="barcode-result-meta" id="barcode-result-meta">-</div>
+        <div style="display:flex;gap:8px;margin-top:14px;">
+          <button class="btn btn-s" style="flex:1;font-size:13px;" id="btn-barcode-rescan">Rescan</button>
+          <button class="btn btn-p" style="flex:1;font-size:13px;" id="btn-barcode-use">Use this item →</button>
+        </div>
+      </div>
+      <div style="background:var(--surface2);border-radius:var(--r);padding:14px;margin-top:14px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:6px;">Supported formats</div>
+        <div style="font-size:11px;color:var(--text3);line-height:1.8;">UPC-A, UPC-E, EAN-8, EAN-13, Code-128, Code-39, QR Code</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:4px;">Product data sourced from Open Food Facts &amp; Open Product Data.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REMINDERS SCREEN -->
+<div id="screen-reminders" class="screen">
+  <div class="topbar">
+    <button class="back-btn" id="back-reminders"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+    <h2>Warranty &amp; Expiry Reminders <span class="pro-badge">PRO</span></h2>
+  </div>
+  <div class="scroll-area">
+    <div id="reminders-pro-gate" class="pro-gate">
+      <div class="pro-gate-icon">🔔</div>
+      <div class="pro-gate-title">Never miss an expiry again</div>
+      <div class="pro-gate-sub">Set reminders for appliance warranties, product batch expiry, AMC renewals, and equipment servicing. BagTag notifies you before anything lapses.</div>
+      <button class="pro-gate-btn" onclick="showProSheet('reminders')">✨ Upgrade to BagTag Pro</button>
+    </div>
+    <div id="reminders-content" style="display:none;">
+      <button class="btn btn-p" id="btn-add-reminder" style="margin-bottom:16px;">+ Add reminder</button>
+      <div id="reminders-urgent" style="margin-bottom:16px;display:none;">
+        <div class="sec-lbl" style="margin-bottom:8px;color:#C0392B;">🔴 Urgent (expired / this week)</div>
+        <div id="reminders-urgent-list"></div>
+      </div>
+      <div id="reminders-upcoming" style="margin-bottom:16px;display:none;">
+        <div class="sec-lbl" style="margin-bottom:8px;color:#B45309;">🟡 Coming up (next 30 days)</div>
+        <div id="reminders-upcoming-list"></div>
+      </div>
+      <div id="reminders-all">
+        <div class="sec-lbl" style="margin-bottom:8px;">🟢 All reminders</div>
+        <div id="reminders-all-list"></div>
+      </div>
+      <div id="reminders-empty" class="empty" style="display:none;">
+        <div class="empty-icon">🔔</div>
+        <div class="empty-title">No reminders yet</div>
+        <div class="empty-sub">Add a warranty or expiry date to any item and BagTag will remind you in advance.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD REMINDER SHEET -->
+<div class="acct-sheet" id="add-reminder-sheet" style="z-index:850;">
+  <div style="font-size:15px;font-weight:800;margin-bottom:16px;">🔔 Add Reminder</div>
+  <div class="form-group">
+    <label class="form-lbl">Item / Product name</label>
+    <input type="text" id="reminder-item-name" placeholder="e.g. Samsung TV, Mixer Grinder…"/>
+  </div>
+  <div class="form-group">
+    <label class="form-lbl">Reminder type</label>
+    <select id="reminder-type">
+      <option value="warranty">Warranty expiry</option>
+      <option value="expiry">Product / batch expiry</option>
+      <option value="amc">AMC renewal</option>
+      <option value="service">Equipment servicing</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-lbl">Expiry / due date</label>
+    <input type="date" id="reminder-date" style="width:100%;padding:13px 14px;border:0.5px solid var(--border2);border-radius:var(--rsm);font-size:15px;background:var(--surface);color:var(--text);font-family:var(--font);outline:none;"/>
+  </div>
+  <div class="form-group">
+    <label class="form-lbl">Remind me (days before)</label>
+    <select id="reminder-days-before">
+      <option value="7">7 days before</option>
+      <option value="14">14 days before</option>
+      <option value="30" selected>30 days before</option>
+      <option value="60">60 days before</option>
+    </select>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-s" id="btn-cancel-reminder">Cancel</button>
+    <button class="btn btn-p" id="btn-save-reminder">Save reminder</button>
+  </div>
+</div>
+
 </div><!-- end .app -->
 
 <!-- BOTTOM NAV -->
@@ -653,10 +952,72 @@ textarea{min-height:80px;resize:vertical;line-height:1.5;}
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     Home
   </button>
+  <button class="bnav-item" id="bnav-sharing" onclick="switchTab('sharing')">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    Sharing<span class="pro-badge" style="font-size:7px;padding:1px 4px;margin-left:2px;">PRO</span>
+  </button>
+  <button class="bnav-item" id="bnav-barcode" onclick="switchTab('barcode')">
+    <svg viewBox="0 0 24 24"><path d="M3 5v4M3 15v4M7 5v2M7 17v2M11 5v14M15 5v2M15 17v2M19 5v4M19 15v4M21 5h-2M21 19h-2M5 5H3M5 19H3"/></svg>
+    Scan<span class="pro-badge" style="font-size:7px;padding:1px 4px;margin-left:2px;">PRO</span>
+  </button>
+  <button class="bnav-item" id="bnav-reminders" onclick="switchTab('reminders')">
+    <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    Reminders<span class="pro-badge" style="font-size:7px;padding:1px 4px;margin-left:2px;">PRO</span>
+  </button>
   <button class="bnav-item" id="bnav-summary" onclick="switchTab('summary')">
-    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
     Summary
   </button>
+</div>
+
+<!-- PRO UPGRADE SHEET -->
+<div class="pro-sheet" id="pro-sheet">
+  <div class="pro-sheet-handle"></div>
+  <div class="pro-sheet-logo">
+    <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="psTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00E5FF"/><stop offset="50%" style="stop-color:#4B6FFF"/><stop offset="100%" style="stop-color:#9B30FF"/>
+        </linearGradient>
+      </defs>
+      <path d="M38,100 L70,55 Q72,42 86,42 L168,42 Q182,42 182,56 L182,144 Q182,158 168,158 L86,158 Q72,158 70,145 Z" fill="url(#psTagGrad)"/>
+      <ellipse cx="52" cy="100" rx="22" ry="16" fill="none" stroke="#1A2456" stroke-width="8"/>
+      <circle cx="62" cy="100" r="6" fill="#1A2456"/>
+      <rect x="101" y="78" width="54" height="48" rx="10" fill="white" opacity="0.95"/>
+      <rect x="105" y="82" width="46" height="40" rx="8" fill="#3D5AFE"/>
+    </svg>
+    <span style="font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;">BagTag <span style="background:linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Pro</span></span>
+  </div>
+  <div class="pro-sheet-title">Unlock the full BagTag experience</div>
+  <div class="pro-sheet-sub">Everything in Free, plus the features that matter most</div>
+  <ul class="pro-feature-list">
+    <li>
+      <span class="icon">👨‍👩‍👧‍👦</span>
+      <div><strong>Family &amp; Team Sharing</strong><small>Up to 10 members · Owner, Editor &amp; Viewer roles</small></div>
+    </li>
+    <li>
+      <span class="icon">📦</span>
+      <div><strong>Unlimited Barcode Scan &amp; Auto-fill</strong><small>UPC / EAN · Auto-fill name, category &amp; details</small></div>
+    </li>
+    <li>
+      <span class="icon">🔔</span>
+      <div><strong>Warranty &amp; Expiry Reminders</strong><small>Push alerts · Warranty, AMC, batch expiry &amp; more</small></div>
+    </li>
+    <li>
+      <span class="icon">☁️</span>
+      <div><strong>Unlimited cloud storage</strong><small>Free plan: up to 3 folders &amp; 10 bags</small></div>
+    </li>
+    <li>
+      <span class="icon">📊</span>
+      <div><strong>Advanced Summary &amp; Export</strong><small>PDF export with photos &amp; full item details</small></div>
+    </li>
+  </ul>
+  <div class="pro-price-row">
+    <div class="pro-price">₹199</div>
+    <div class="pro-price-per">/ month &nbsp;·&nbsp; Cancel anytime</div>
+  </div>
+  <button class="pro-cta" id="btn-pro-subscribe">✨ Start 15-day free trial</button>
+  <button class="pro-dismiss" id="btn-pro-dismiss">Maybe later</button>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -4080,9 +4441,24 @@ function setAuthMode(mode){
   document.getElementById('btn-auth-toggle').textContent=mode==='signin'?'Create one':'Sign in instead';
   document.getElementById('auth-switch-row').childNodes[0].textContent=mode==='signin'?'No account? ':'Already have one? ';
   document.getElementById('auth-err').style.display='none';
+  document.getElementById('forgot-pw-row').style.display=mode==='signin'?'':'none';
   updateAuthBtn();
 }
 document.getElementById('btn-auth-toggle').addEventListener('click',()=>setAuthMode(authMode==='signin'?'signup':'signin'));
+document.getElementById('btn-forgot-pw').addEventListener('click',async()=>{
+  const email=document.getElementById('auth-email').value.trim();
+  if(!email){
+    document.getElementById('auth-err').textContent='Enter your email above first, then tap Forgot password.';
+    document.getElementById('auth-err').style.display='';return;
+  }
+  const{error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.href});
+  if(error){
+    document.getElementById('auth-err').textContent=error.message;
+    document.getElementById('auth-err').style.display='';
+  } else {
+    toast('📧 Password reset email sent! Check your inbox.');
+  }
+});
 
 document.getElementById('btn-auth-submit').addEventListener('click',async()=>{
   const errEl=document.getElementById('auth-err');
@@ -4090,17 +4466,39 @@ document.getElementById('btn-auth-submit').addEventListener('click',async()=>{
   errEl.style.display='none';
   const email=document.getElementById('auth-email').value.trim();
   const password=document.getElementById('auth-password').value;
-  if(!email||!password){errEl.textContent='Please enter email and password.';errEl.style.display='';return;}
+  if(!email){errEl.textContent='Please enter your email address.';errEl.style.display='';return;}
+  if(!password){errEl.textContent='Please enter your password.';errEl.style.display='';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){errEl.textContent='Please enter a valid email address.';errEl.style.display='';return;}
+  if(password.length<6){errEl.textContent='Password must be at least 6 characters.';errEl.style.display='';return;}
   btn.innerHTML='<span class="auth-spinner"></span>'+(authMode==='signin'?'Signing in…':'Creating account…');
   btn.disabled=true;
   if(authMode==='signup'){
     const{error}=await sb.auth.signUp({email,password});
-    if(error){errEl.textContent=error.message;errEl.style.display='';btn.textContent=t('create_account');btn.disabled=false;}
-    else{btn.textContent=t('create_account');btn.disabled=false;toast('Check your email to confirm your account!');}
+    if(error){
+      // Friendly error messages
+      let msg=error.message;
+      if(msg.includes('already registered')||msg.includes('already exists'))msg='An account with this email already exists. Try signing in instead.';
+      else if(msg.includes('weak password')||msg.includes('Password'))msg='Please choose a stronger password (min 6 characters).';
+      errEl.textContent=msg;errEl.style.display='';
+      btn.textContent=t('create_account');btn.disabled=false;
+    } else {
+      btn.textContent=t('create_account');btn.disabled=false;
+      // Check if email confirmation is required
+      toast('✅ Account created! Check your email to confirm, then sign in.');
+      setAuthMode('signin');
+    }
   } else {
     const{data,error}=await sb.auth.signInWithPassword({email,password});
-    if(error){errEl.textContent=error.message;errEl.style.display='';btn.textContent=t('sign_in');btn.disabled=false;}
-    else{currentUser=data.user;btn.textContent=t('sign_in');btn.disabled=false;await onSignedIn();}
+    if(error){
+      let msg=error.message;
+      if(msg.includes('Invalid login')||msg.includes('invalid_credentials'))msg='Incorrect email or password. Please try again.';
+      else if(msg.includes('Email not confirmed'))msg='Please check your email and confirm your account first.';
+      else if(msg.includes('Too many requests'))msg='Too many attempts. Please wait a moment and try again.';
+      errEl.textContent=msg;errEl.style.display='';
+      btn.textContent=t('sign_in');btn.disabled=false;
+    } else {
+      currentUser=data.user;btn.textContent=t('sign_in');btn.disabled=false;await onSignedIn();
+    }
   }
 });
 document.getElementById('auth-password').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('btn-auth-submit').click();});
@@ -4110,6 +4508,8 @@ async function onSignedIn(){
   const label=currentUser.phone||currentUser.email||'';
   document.getElementById('acct-email-label').textContent=label;
   await syncFromCloud();
+  await fetchProStatus();   // ← load Pro status from Supabase
+  refreshProScreens();      // ← show/hide Pro gates based on real plan
   checkTnCAfterLogin();
   renderHome();go('home');
 }
@@ -4805,9 +5205,13 @@ document.getElementById('btn-batch-dl').addEventListener('click',async()=>{
 // ── BOTTOM NAV + SUMMARY TAB ──
 function switchTab(tab){
   document.querySelectorAll('.bnav-item').forEach(b=>b.classList.remove('active'));
-  document.getElementById('bnav-'+tab).classList.add('active');
+  const activeBtn=document.getElementById('bnav-'+tab);
+  if(activeBtn)activeBtn.classList.add('active');
   if(tab==='home'){ renderHome(); go('home'); }
   else if(tab==='summary'){ renderSummary(); go('summary'); }
+  else if(tab==='sharing'){ go('sharing'); refreshProScreens&&refreshProScreens(); renderSharing&&renderSharing(); }
+  else if(tab==='barcode'){ go('barcode'); refreshProScreens&&refreshProScreens(); if(isPro&&isPro())startBarcodeScanner&&startBarcodeScanner(); }
+  else if(tab==='reminders'){ go('reminders'); refreshProScreens&&refreshProScreens(); renderReminders&&renderReminders(); }
 }
 
 function renderSummary(){
@@ -5023,6 +5427,283 @@ function viewBag(bag){
 document.getElementById('btn-scan').addEventListener('click',startScan);
 document.getElementById('back-scanner').addEventListener('click',()=>{stopScan();renderHome();go('home');});
 document.getElementById('back-view-bag').addEventListener('click',startScan);
+
+// ── PRO / FREEMIUM ──
+let userPlan = { plan: 'free', trial_days_left: 0, is_pro: false }; // cached from Supabase
+
+async function fetchProStatus() {
+  if (!currentUser) return;
+  try {
+    const { data, error } = await sb
+      .from('user_pro_status')
+      .select('plan, is_pro, trial_days_left, trial_ends')
+      .eq('id', currentUser.id)
+      .single();
+    if (!error && data) {
+      userPlan = data;
+      // Keep localStorage in sync as a fast-read cache
+      localStorage.setItem('bagtag_pro', data.is_pro ? 'true' : 'false');
+      localStorage.setItem('bagtag_plan', data.plan);
+      updatePlanUI();
+    }
+  } catch(e) {
+    // Fall back to localStorage if offline
+    const cached = localStorage.getItem('bagtag_plan');
+    if (cached) userPlan.plan = cached;
+  }
+}
+
+function isPro() {
+  // Trial users get full Pro access too
+  const plan = userPlan.plan || localStorage.getItem('bagtag_plan') || 'free';
+  return userPlan.is_pro === true || plan === 'pro' || plan === 'trial';
+}
+
+async function activatePro() {
+  // Update Supabase
+  if (currentUser) {
+    await sb.from('user_profiles')
+      .update({ is_pro: true, pro_since: new Date().toISOString() })
+      .eq('id', currentUser.id);
+    await fetchProStatus();
+  }
+  localStorage.setItem('bagtag_pro', 'true');
+}
+
+function updatePlanUI() {
+  const badge  = document.getElementById('acct-plan-badge');
+  const sub    = document.getElementById('acct-plan-sub');
+  const upgBtn = document.getElementById('btn-upgrade-from-acct');
+  if (!badge) return;
+  const plan = userPlan.plan || 'free';
+  const days = userPlan.trial_days_left || 0;
+  if (plan === 'pro') {
+    badge.textContent = '✨ BagTag Pro';
+    badge.style.background = 'linear-gradient(135deg,#00BCD4,#3D5AFE,#9C27B0)';
+    badge.style.color = 'white';
+    sub.textContent = 'Full access to all Pro features. Thank you!';
+    upgBtn.style.display = 'none';
+  } else if (plan === 'trial') {
+    badge.textContent = `⏳ Free Trial — ${days} day${days!==1?'s':''} left`;
+    badge.style.background = '#FFF3CD';
+    badge.style.color = '#B45309';
+    sub.textContent = 'All Pro features are unlocked during your trial.';
+    upgBtn.style.display = '';
+  } else {
+    badge.textContent = '🔒 Free Plan';
+    badge.style.background = 'var(--surface2)';
+    badge.style.color = 'var(--text3)';
+    sub.textContent = 'Upgrade to unlock sharing, barcode scan & reminders.';
+    upgBtn.style.display = '';
+  }
+}
+
+document.getElementById('btn-upgrade-from-acct').addEventListener('click', () => {
+  document.getElementById('acct-sheet').classList.remove('open');
+  showProSheet('account');
+});
+
+function showProSheet(feature){
+  document.getElementById('pro-sheet').classList.add('open');
+}
+function hideProSheet(){
+  document.getElementById('pro-sheet').classList.remove('open');
+}
+document.getElementById('btn-pro-dismiss').addEventListener('click', hideProSheet);
+document.getElementById('btn-pro-subscribe').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-pro-subscribe');
+  btn.textContent = 'Activating…'; btn.disabled = true;
+  await activatePro();
+  btn.textContent = '✨ Start 15-day free trial'; btn.disabled = false;
+  hideProSheet();
+  toast('🎉 Welcome to BagTag Pro!');
+  refreshProScreens();
+});
+
+function refreshProScreens(){
+  ['sharing','barcode','reminders'].forEach(tab=>{
+    const gate=document.getElementById(tab+'-pro-gate');
+    const content=document.getElementById(tab+'-content');
+    if(gate&&content){
+      if(isPro()){gate.style.display='none';content.style.display='';}
+      else{gate.style.display='';content.style.display='none';}
+    }
+  });
+}
+
+// Back buttons for new screens
+document.getElementById('back-sharing').addEventListener('click',()=>switchTab('home'));
+document.getElementById('back-barcode').addEventListener('click',()=>switchTab('home'));
+document.getElementById('back-reminders').addEventListener('click',()=>switchTab('home'));
+
+// ── SHARING ──
+function renderSharing(){
+  if(!isPro())return;
+  const ownerLabel=document.getElementById('share-owner-label');
+  if(ownerLabel&&currentUser){
+    ownerLabel.textContent=currentUser.email||currentUser.phone||'Account Owner';
+  }
+}
+document.getElementById('btn-invite-member')&&document.getElementById('btn-invite-member').addEventListener('click',()=>{
+  toast('Invite link copied to clipboard!');
+});
+
+// ── BARCODE SCAN & AUTO-FILL ──
+let barcodeStream=null,barcodeLoop=null;
+async function startBarcodeScanner(){
+  if(!isPro())return;
+  const video=document.getElementById('barcode-video');
+  if(!video)return;
+  try{
+    barcodeStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});
+    video.srcObject=barcodeStream;
+    video.setAttribute('playsinline','true');
+    await video.play();
+    const canvas=document.createElement('canvas');
+    const ctx=canvas.getContext('2d',{willReadFrequently:true});
+    barcodeLoop=setInterval(async()=>{
+      if(video.readyState!==video.HAVE_ENOUGH_DATA||video.videoWidth===0)return;
+      canvas.width=video.videoWidth;canvas.height=video.videoHeight;
+      ctx.drawImage(video,0,0,canvas.width,canvas.height);
+      if('BarcodeDetector' in window){
+        try{
+          const codes=await new BarcodeDetector({formats:['upc_a','upc_e','ean_13','ean_8','code_128','code_39','qr_code']}).detect(video);
+          if(codes.length>0){
+            clearInterval(barcodeLoop);
+            handleBarcodeResult(codes[0].rawValue);
+          }
+        }catch(e){}
+      }
+    },600);
+  }catch(e){toast('Camera access denied.');}
+}
+async function handleBarcodeResult(code){
+  if(!code)return;
+  const card=document.getElementById('barcode-result-card');
+  const nameEl=document.getElementById('barcode-result-name');
+  const metaEl=document.getElementById('barcode-result-meta');
+  nameEl.textContent='Looking up product…';
+  metaEl.textContent=code;
+  card.style.display='block';
+  // Try Open Food Facts API for product lookup
+  try{
+    const res=await fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`);
+    const data=await res.json();
+    if(data.status===1&&data.product){
+      const p=data.product;
+      nameEl.textContent=p.product_name||p.product_name_en||'Unknown product';
+      metaEl.textContent=(p.brands||'')+(p.quantity?' · '+p.quantity:'')+(p.categories_tags?(' · '+(p.categories_tags[0]||'').replace('en:','')):'');
+    }else{
+      nameEl.textContent='Product not found in database';
+      metaEl.textContent='Barcode: '+code;
+    }
+  }catch(e){
+    nameEl.textContent='Lookup failed';
+    metaEl.textContent='Barcode: '+code;
+  }
+}
+document.getElementById('btn-barcode-rescan')&&document.getElementById('btn-barcode-rescan').addEventListener('click',()=>{
+  document.getElementById('barcode-result-card').style.display='none';
+  startBarcodeScanner();
+});
+document.getElementById('btn-barcode-use')&&document.getElementById('btn-barcode-use').addEventListener('click',()=>{
+  const name=document.getElementById('barcode-result-name').textContent;
+  if(name&&name!=='Looking up product…'&&name!=='Product not found in database'){
+    // Pre-fill add-item form and navigate there
+    document.getElementById('inp-item-name').value=name;
+    go('add-item');
+    toast('Product name auto-filled!');
+  }
+});
+
+// Stop barcode scanner when leaving tab
+const _origGo=go;
+
+// ── REMINDERS ──
+function getReminders(){
+  try{return JSON.parse(localStorage.getItem('bagtag_reminders')||'[]');}catch(e){return[];}
+}
+function saveReminders(arr){localStorage.setItem('bagtag_reminders',JSON.stringify(arr));}
+
+function renderReminders(){
+  if(!isPro())return;
+  const reminders=getReminders();
+  const allList=document.getElementById('reminders-all-list');
+  const urgentList=document.getElementById('reminders-urgent-list');
+  const upcomingList=document.getElementById('reminders-upcoming-list');
+  const emptyEl=document.getElementById('reminders-empty');
+  const urgentSec=document.getElementById('reminders-urgent');
+  const upcomingSec=document.getElementById('reminders-upcoming');
+  const now=new Date();
+  const urgent=[],upcoming=[],rest=[];
+  reminders.forEach(r=>{
+    const exp=new Date(r.date);
+    const daysLeft=Math.ceil((exp-now)/(1000*60*60*24));
+    r._daysLeft=daysLeft;
+    if(daysLeft<=7)urgent.push(r);
+    else if(daysLeft<=30)upcoming.push(r);
+    else rest.push(r);
+  });
+  urgentSec.style.display=urgent.length?'':'none';
+  upcomingSec.style.display=upcoming.length?'':'none';
+  emptyEl.style.display=reminders.length?'none':'';
+  const typeLabels={warranty:'Warranty',expiry:'Expiry',amc:'AMC',service:'Service',other:'Reminder'};
+  const typeIcons={warranty:'🛡️',expiry:'📦',amc:'🔄',service:'🔧',other:'🔔'};
+  function renderList(arr,el){
+    el.innerHTML=arr.map(r=>{
+      const d=r._daysLeft;
+      const cls=d<0?'urgent':d<=7?'urgent':d<=30?'soon':'ok';
+      const label=d<0?`Expired ${Math.abs(d)}d ago`:d===0?'Expires today':`${d} days left`;
+      return`<div class="reminder-card">
+        <div class="reminder-icon">${typeIcons[r.type]||'🔔'}</div>
+        <div class="reminder-meta">
+          <div class="reminder-name">${esc(r.name)}</div>
+          <div class="reminder-type">${typeLabels[r.type]||'Reminder'}</div>
+          <div class="reminder-date ${cls}">${label} · ${r.date}</div>
+        </div>
+        <button class="del-btn" onclick="deleteReminder('${r.id}')"><svg viewBox="0 0 24 24"><path d="M3 6h18M19 6l-1 14H6L5 6M9 6V4h6v2"/></svg></button>
+      </div>`;
+    }).join('');
+  }
+  renderList(urgent,urgentList);
+  renderList(upcoming,upcomingList);
+  renderList(rest.concat(upcoming.length||urgent.length?[]:[]),allList);
+  if(urgent.length||upcoming.length)allList.innerHTML='';
+  else renderList(reminders,allList);
+}
+
+function deleteReminder(id){
+  const arr=getReminders().filter(r=>r.id!==id);
+  saveReminders(arr);
+  renderReminders();
+  toast('Reminder removed.');
+}
+
+// Add reminder sheet
+document.getElementById('btn-add-reminder')&&document.getElementById('btn-add-reminder').addEventListener('click',()=>{
+  document.getElementById('add-reminder-sheet').classList.add('open');
+});
+document.getElementById('btn-cancel-reminder').addEventListener('click',()=>{
+  document.getElementById('add-reminder-sheet').classList.remove('open');
+});
+document.getElementById('btn-save-reminder').addEventListener('click',()=>{
+  const name=document.getElementById('reminder-item-name').value.trim();
+  const date=document.getElementById('reminder-date').value;
+  const type=document.getElementById('reminder-type').value;
+  const daysBefore=document.getElementById('reminder-days-before').value;
+  if(!name||!date){toast('Please fill in name and date.');return;}
+  const arr=getReminders();
+  arr.push({id:'r'+Date.now(),name,date,type,daysBefore:parseInt(daysBefore)});
+  saveReminders(arr);
+  document.getElementById('add-reminder-sheet').classList.remove('open');
+  document.getElementById('reminder-item-name').value='';
+  document.getElementById('reminder-date').value='';
+  renderReminders();
+  toast('✅ Reminder saved!');
+});
+
+// Init Pro screens on load
+refreshProScreens();
 
 // ── URL HANDLER + AUTH INIT ──
 (async function(){
